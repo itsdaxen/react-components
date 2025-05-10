@@ -63,7 +63,7 @@ body {
 .accordion-container {
   display: flex;
   flex-direction: column;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0;
   gap: 16px;
@@ -125,7 +125,7 @@ body {
   transform: translateX(4px);
 }
 
-.accordion-item span {
+.accordion-item .number {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,7 +140,11 @@ body {
   transition: var(--transition-standard);
 }
 
-.accordion-item div:hover span {
+.accordion-item .sign {
+  font-size: 1.5rem;
+}
+
+.accordion-item div:hover .number {
   transform: scale(1.1);
   box-shadow: var(--shadow-primary);
 }
@@ -179,10 +183,14 @@ body {
 }
 
 /* Active state for accordion header */
-.accordion-item.active div span {
+.accordion-item.active div .number {
   background: var(--secondary-color);
   transform: scale(1.05);
   box-shadow: var(--shadow-primary);
+}
+
+.accordion-item.active .sign {
+  color: var(--primary-color);
 }
 
 .accordion-item.active h2 {
@@ -209,7 +217,7 @@ body {
     height: 2px;
   }
 
-  .accordion-item span {
+  .accordion-item .number {
     width: 28px;
     height: 28px;
     margin-right: 12px;

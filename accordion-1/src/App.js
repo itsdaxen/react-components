@@ -82,8 +82,9 @@ function AccordionItem({
       }
     >
       <div>
-        <span>{number}</span>
+        <span className="number">{number > 9 ? number : `0${number}`}</span>
         <h2>{title}</h2>
+        <span className="sign">{activeNumber === number ? "-" : "+"}</span>
       </div>
       {activeNumber === number ? <p>{content}</p> : null}
     </div>
